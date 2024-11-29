@@ -1,0 +1,17 @@
+package br.com.api.recuperacao.models;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+@Entity
+@Data
+public class Material {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Estratégia de geração automática do ID
+    private Long id;
+
+    @NotNull(message = "A descrição do material não pode ser nula.") // Validação
+    private String descricao;
+}
